@@ -1,0 +1,37 @@
+# 配置中心
+spring:
+  application:
+    name: config-server
+  cloud:
+    inetutils:
+      default-ip-address: 127.0.0.1
+    config:
+      server:
+        git:
+          # 配置文件所在仓库
+          uri: https://github.com/fengkidding/config.git
+          # github 登录账号
+          username: fengkidding
+          password: 658asdVF
+          # 配置文件分支
+          default-label: master
+          # 配置文件所在根目录
+          search-paths: config
+
+server:
+  port: 11000
+  tomcat:
+    uri-encoding: utf-8
+
+# 微服务注册
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:root@127.0.0.1:10000/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: ${spring.cloud.inetutils.default-ip-address}
+    ip-address: ${spring.cloud.inetutils.default-ip-address}
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.inetutils.default-ip-address}:${server.port}
