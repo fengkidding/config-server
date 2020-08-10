@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.10.RELEASE</version>
+        <version>2.1.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.configserver</groupId>
@@ -20,7 +20,7 @@
         <java.version>1.8</java.version>
 
         <!-- spring-cloud-dependencies版本 -->
-        <springcloud.version>Edgware.RELEASE</springcloud.version>
+        <springcloud.version>Greenwich.RELEASE</springcloud.version>
 
         <!-- The main class to start by executing java -jar -->
         <start-class>com.configserver.ConfigServerApplication</start-class>
@@ -41,7 +41,7 @@
         <!-- 注册中心 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
         <!-- spring cloud config 服务端包 -->
